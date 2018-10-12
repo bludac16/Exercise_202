@@ -26,18 +26,45 @@ public class RadioGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popupOptionen = new javax.swing.JPopupMenu();
+        menuOptionen = new javax.swing.JMenu();
+        miHinzufügen = new javax.swing.JMenuItem();
+        miBandAnzeigen = new javax.swing.JMenuItem();
+        miBandAusblenden = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        menuOptionen.setText("jMenu1");
+
+        miHinzufügen.setText("jMenuItem1");
+        menuOptionen.add(miHinzufügen);
+
+        miBandAnzeigen.setText("jMenuItem1");
+        menuOptionen.add(miBandAnzeigen);
+
+        miBandAusblenden.setText("jMenuItem1");
+        menuOptionen.add(miBandAusblenden);
+
+        popupOptionen.add(menuOptionen);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jScrollPane1.setComponentPopupMenu(popupOptionen);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +105,12 @@ public class RadioGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JMenu menuOptionen;
+    private javax.swing.JMenuItem miBandAnzeigen;
+    private javax.swing.JMenuItem miBandAusblenden;
+    private javax.swing.JMenuItem miHinzufügen;
+    private javax.swing.JPopupMenu popupOptionen;
     // End of variables declaration//GEN-END:variables
 }

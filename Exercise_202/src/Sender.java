@@ -8,7 +8,7 @@
  *
  * @author David
  */
-public class Sender {
+public class Sender implements Comparable<Sender>{
     private String name;
     private double frequenz;
     private String band;
@@ -41,6 +41,19 @@ public class Sender {
 
     public void setBand(String band) {
         this.band = band;
+    }
+
+    @Override
+    public int compareTo(Sender t) {
+       if(this.frequenz < t.frequenz)
+       {
+           return -1;
+       } else if(this.frequenz > t.frequenz)
+       {
+           return 1;
+       } else{
+           return this.getName().compareTo(t.getName());
+       }
     }
     
     
