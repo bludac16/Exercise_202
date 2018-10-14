@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.table.AbstractTableModel;
 
 /*
@@ -18,6 +19,7 @@ public class SenderTableModel extends AbstractTableModel{
 
     public void addSender(Sender s) {
         senderliste.add(s);
+        Collections.sort(senderliste);
         fireTableDataChanged();
     }
 

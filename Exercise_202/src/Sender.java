@@ -44,15 +44,15 @@ public class Sender implements Comparable<Sender>{
     }
 
     @Override
-    public int compareTo(Sender t) {
-       if(this.frequenz < t.frequenz)
+    public int compareTo(Sender s) {
+       if(this.frequenz < s.frequenz)
        {
            return -1;
-       } else if(this.frequenz > t.frequenz)
+       } else if(this.frequenz > s.frequenz)
        {
            return 1;
        } else{
-           return this.getName().compareTo(t.getName());
+           return this.getName().compareTo(s.getName());
        }
     }
     

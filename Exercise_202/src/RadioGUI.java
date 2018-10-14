@@ -13,8 +13,12 @@ public class RadioGUI extends javax.swing.JFrame {
     /**
      * Creates new form RadioGUI
      */
+    private SenderTableModel stm = new SenderTableModel();
+    
     public RadioGUI() {
         initComponents();
+        tableRadios.setModel(stm);
+        tableRadios.setDefaultRenderer(Object.class, new SenderTableRenderer());
     }
 
     /**
@@ -32,7 +36,7 @@ public class RadioGUI extends javax.swing.JFrame {
         miBandAnzeigen = new javax.swing.JMenuItem();
         miBandAusblenden = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableRadios = new javax.swing.JTable();
 
         menuOptionen.setText("jMenu1");
 
@@ -51,7 +55,7 @@ public class RadioGUI extends javax.swing.JFrame {
 
         jScrollPane1.setComponentPopupMenu(popupOptionen);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableRadios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -62,7 +66,7 @@ public class RadioGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableRadios);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -106,11 +110,11 @@ public class RadioGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JMenu menuOptionen;
     private javax.swing.JMenuItem miBandAnzeigen;
     private javax.swing.JMenuItem miBandAusblenden;
     private javax.swing.JMenuItem miHinzufügen;
     private javax.swing.JPopupMenu popupOptionen;
+    private javax.swing.JTable tableRadios;
     // End of variables declaration//GEN-END:variables
 }
