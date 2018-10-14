@@ -27,8 +27,13 @@ public class SenderTableModel extends AbstractTableModel{
         if(band == false)
         {
             colNames = new String[2];
+            colNames[0] = "Sender";
+            colNames[1] = "Frequenz";
         } else{
             colNames = new String[3];
+            colNames[0] = "Sender";
+            colNames[1] = "Frequenz";
+            colNames[2] = "Band";
         }
 
         fireTableStructureChanged();

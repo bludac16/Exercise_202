@@ -33,8 +33,13 @@ public class SenderTableRenderer implements TableCellRenderer{
         } else if(s.getBand()=="FM")
         {
             label.setBackground(Color.RED);
-        } else {
-            JOptionPane.showMessageDialog(null,"Bitte wähle 'AM' oder 'FM'");
+        }
+        
+        switch(i)
+        {
+            case 0: label.setText(s.getName()); break;
+            case 1: label.setText(String.format("%.2f", s.getFrequenz())); break;
+            case 2: label.setText(s.getBand()); break;
         }
         
         return label;
