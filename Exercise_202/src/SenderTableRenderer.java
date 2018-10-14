@@ -2,9 +2,7 @@
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
-import java.nio.file.Files;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
 
@@ -33,6 +31,12 @@ public class SenderTableRenderer implements TableCellRenderer{
         } else if(s.getBand().equals("FM"))
         {
             label.setBackground(Color.RED);
+        }
+        
+        if(isSelected == true)
+        {
+            label.setForeground(Color.white);
+            label.setBackground(Color.black);
         }
         
         switch(i)

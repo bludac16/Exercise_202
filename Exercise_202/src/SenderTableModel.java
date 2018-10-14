@@ -1,6 +1,6 @@
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import javax.swing.table.AbstractTableModel;
 
 /*
@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class SenderTableModel extends AbstractTableModel{
     private static String[] colNames = {};
-    private ArrayList<Sender> senderliste = new ArrayList<>();
+    private LinkedList<Sender> senderliste = new LinkedList<>();
 
     public void addSender(Sender s) {
         senderliste.add(s);

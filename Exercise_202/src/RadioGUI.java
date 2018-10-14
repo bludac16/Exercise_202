@@ -18,6 +18,7 @@ public class RadioGUI extends javax.swing.JFrame {
         initComponents();
         tableRadios.setModel(stm);
         tableRadios.setDefaultRenderer(Object.class, new SenderTableRenderer());
+        stm.updateNumCols(true);
         stm.addSender(new Sender("Oe3", 89.2, "FM"));
     }
 

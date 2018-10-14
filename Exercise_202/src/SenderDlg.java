@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -125,8 +128,18 @@ public class SenderDlg extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOKActionPerformed
-        s = new Sender(tfName.getText(),Double.parseDouble(tfFrequenz.getText()),tfBand.getText());
-        ok = true;
+        try{if(tfName.getText().length() > 0 && tfFrequenz.getText() != null && tfBand.getText().length() > 0)
+        {
+            if(Double.parseDouble(tfFrequenz.getText()) > 0 && Double.parseDouble(tfFrequenz.getText()) < 1000)
+                if(tfBand.getText().equals("AM")|| tfBand.getText().equals("FM"))
+                {
+                   s = new Sender(tfName.getText(),Double.parseDouble(tfFrequenz.getText()),tfBand.getText());
+                   ok = true; 
+                }
+        }} catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null,"Bitte alle Textfelder ausfüllen! Folgende Bedingungen: Die Frequenz muss zwischen 0 und 1000 sein und das Band muss entweder AM oder FM sein!");
+        }
         this.dispose();
     }//GEN-LAST:event_btOKActionPerformed
 
