@@ -24,13 +24,13 @@ public class SenderTableRenderer implements TableCellRenderer{
     public Component getTableCellRendererComponent(JTable jtable, Object o, boolean isSelected, boolean hasRow, int row, int i) {
         Sender s = (Sender) o;
         JLabel label = new JLabel();
+        label.setOpaque(true);
         label.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 14));
         label.setForeground(Color.LIGHT_GRAY);
-        label.setOpaque(true);
-        if(s.getBand()=="AM")
+        if(s.getBand().equals("AM"))
         {
             label.setBackground(Color.BLUE);
-        } else if(s.getBand()=="FM")
+        } else if(s.getBand().equals("FM"))
         {
             label.setBackground(Color.RED);
         }
