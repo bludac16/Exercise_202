@@ -128,19 +128,30 @@ public class SenderDlg extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOKActionPerformed
-        try{if(tfName.getText().length() > 0 && tfFrequenz.getText() != null && tfBand.getText().length() > 0)
+        ok = true; 
+        if(tfName.getText().isEmpty() == true || tfFrequenz.getText().isEmpty() == true || tfBand.getText().isEmpty() == true)
         {
-            if(Double.parseDouble(tfFrequenz.getText()) > 0 && Double.parseDouble(tfFrequenz.getText()) < 1000)
-                if(tfBand.getText().equals("AM")|| tfBand.getText().equals("FM"))
-                {
-                   s = new Sender(tfName.getText(),Double.parseDouble(tfFrequenz.getText()),tfBand.getText());
-                   ok = true; 
-                }
-        }} catch(Exception ex)
-        {
-            JOptionPane.showMessageDialog(null,"Bitte alle Textfelder ausfüllen! Folgende Bedingungen: Die Frequenz muss zwischen 0 und 1000 sein und das Band muss entweder AM oder FM sein!");
+            JOptionPane.showMessageDialog(null, "Alle Textfelder müssen befüllt sein!");
+            ok = false;
         }
-        this.dispose();
+        if(Double.parseDouble(tfFrequenz.getText()) <= 0 || Double.parseDouble(tfFrequenz.getText()) >= 1000)
+        {
+            JOptionPane.showMessageDialog(null, "Die Frequenz muss zwischen 0 und 1000 sein!");
+            ok = false;
+        }
+        if(tfBand.getText().equals("AM") == false && tfBand.getText().equals("FM") == false)
+        {
+            JOptionPane.showMessageDialog(null, "Bitte trage bei Band nur 'AM' oder 'FM' ein!");
+            ok = false;
+        }
+        if(ok == true)
+        {
+            s = new Sender(tfName.getText(),Double.parseDouble(tfFrequenz.getText()),tfBand.getText());
+            this.dispose();
+        }
+        
+        
+        
     }//GEN-LAST:event_btOKActionPerformed
 
     private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
