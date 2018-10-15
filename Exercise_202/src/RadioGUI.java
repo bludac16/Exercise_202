@@ -21,6 +21,9 @@ public class RadioGUI extends javax.swing.JFrame {
         tableRadios.setModel(stm);
         tableRadios.setDefaultRenderer(Object.class, new SenderTableRenderer());
         stm.updateNumCols(true);
+        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
+        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
+        tableRadios.getColumnModel().getColumn(2).setPreferredWidth(50);
         stm.addSender(new Sender("Oe3", 89.2, "FM"));
     }
 
@@ -95,10 +98,16 @@ public class RadioGUI extends javax.swing.JFrame {
 
     private void miBandAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBandAnzeigenActionPerformed
         stm.updateNumCols(true);
+        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
+        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
+        tableRadios.getColumnModel().getColumn(2).setPreferredWidth(50);
     }//GEN-LAST:event_miBandAnzeigenActionPerformed
 
     private void miBandAusblendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBandAusblendenActionPerformed
         stm.updateNumCols(false);
+        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
+        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
+        
     }//GEN-LAST:event_miBandAusblendenActionPerformed
 
     /**
