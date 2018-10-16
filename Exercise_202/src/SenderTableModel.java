@@ -1,6 +1,7 @@
 
 import java.util.Collections;
 import java.util.LinkedList;
+import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
 /*
@@ -59,5 +60,17 @@ public class SenderTableModel extends AbstractTableModel{
         Sender s = senderliste.get(row);
         return s;
     }
-    
+     public void initTable(JTable table, Boolean on)
+     {
+         if(on == true)
+         {
+             table.getColumnModel().getColumn(0).setPreferredWidth(150);
+             table.getColumnModel().getColumn(1).setPreferredWidth(120);
+             table.getColumnModel().getColumn(2).setPreferredWidth(50);
+         } else{
+             table.getColumnModel().getColumn(0).setPreferredWidth(150);
+             table.getColumnModel().getColumn(1).setPreferredWidth(120);
+            
+         }
+     }
 }

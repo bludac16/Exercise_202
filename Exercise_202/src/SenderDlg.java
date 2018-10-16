@@ -134,7 +134,7 @@ public class SenderDlg extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Alle Textfelder müssen befüllt sein!");
             ok = false;
         }
-        if(Double.parseDouble(tfFrequenz.getText()) <= 0 || Double.parseDouble(tfFrequenz.getText()) >= 1000)
+        if(tfFrequenz.getText().isEmpty() == true || Double.parseDouble(tfFrequenz.getText()) <= 0 || Double.parseDouble(tfFrequenz.getText()) >= 1000)
         {
             JOptionPane.showMessageDialog(null, "Die Frequenz muss zwischen 0 und 1000 sein!");
             ok = false;

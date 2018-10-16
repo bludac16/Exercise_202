@@ -1,13 +1,5 @@
 
 
-
-
-/* To do:
-            Spaltenbreite
-            Exception Dlg
-            
-*/
-
 /**
  *
  * @author David
@@ -15,15 +7,14 @@
 public class RadioGUI extends javax.swing.JFrame {
 
    private SenderTableModel stm=new SenderTableModel();
+   private boolean anzeigen = true;
    
     public RadioGUI() {
         initComponents();
         tableRadios.setModel(stm);
         tableRadios.setDefaultRenderer(Object.class, new SenderTableRenderer());
         stm.updateNumCols(true);
-        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
-        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
-        tableRadios.getColumnModel().getColumn(2).setPreferredWidth(50);
+        stm.initTable(tableRadios, anzeigen);
         stm.addSender(new Sender("Oe3", 89.2, "FM"));
     }
 
@@ -98,15 +89,12 @@ public class RadioGUI extends javax.swing.JFrame {
 
     private void miBandAnzeigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBandAnzeigenActionPerformed
         stm.updateNumCols(true);
-        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
-        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
-        tableRadios.getColumnModel().getColumn(2).setPreferredWidth(50);
+        stm.initTable(tableRadios, anzeigen);
     }//GEN-LAST:event_miBandAnzeigenActionPerformed
 
     private void miBandAusblendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBandAusblendenActionPerformed
         stm.updateNumCols(false);
-        tableRadios.getColumnModel().getColumn(0).setPreferredWidth(150);
-        tableRadios.getColumnModel().getColumn(1).setPreferredWidth(120);
+        stm.initTable(tableRadios, false);
         
     }//GEN-LAST:event_miBandAusblendenActionPerformed
 
